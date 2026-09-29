@@ -18,7 +18,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v9.3.0
         with:
-          args: --exclude-files ".*_test.go"
+          args: --tests=false
           version: latest
       - name: go build
         run: go build ./...
