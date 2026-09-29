@@ -58,7 +58,7 @@ func main() {
 		}
 	}()
 
-	client, err := client.NewYandexClient(cfg.FolderID, cfg.AuthKeyFile)
+	client, err := client.NewYandexClient(cfg.FolderID, cfg.AuthKeyFile, cfg.UseWorkloadIdentity)
 	if err != nil {
 		log.Fatalf("NewYandexClient: %v", err)
 	}

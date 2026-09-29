@@ -1,5 +1,6 @@
 folder_id: ""
 auth_key_file: ""
+use_workload_identity: false
 
 server:
   webhook_port: 8888
