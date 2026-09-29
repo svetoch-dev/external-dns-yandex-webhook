@@ -28,7 +28,7 @@ func main() {
 
 	go func() {
 		<-startedChan
-		log.Debugf("Webhook server started on port: :%d", cfg.Server.WebhookPort)
+		log.Debugf("Webhook server started on port: %s:%d", cfg.Server.NetworkInterface, cfg.Server.WebhookPort)
 		httpApiStarted = true
 	}()
 
@@ -68,5 +68,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("NewYandexProvider: %v", err)
 	}
-	api.StartHTTPApi(provider, startedChan, 0, 0, fmt.Sprintf(":%d", cfg.Server.WebhookPort))
+	api.StartHTTPApi(provider, startedChan, 0, 0, fmt.Sprintf("%s:%d", cfg.Server.NetworkInterface, cfg.Server.WebhookPort))
 }
